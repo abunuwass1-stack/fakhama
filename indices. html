@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الفخامة للديكور والتشطيب</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#111;color:#fff;font-family:Arial,sans-serif;text-align:center}
+header{background:#171717;padding:25px 15px;border-bottom:2px solid #c9a23f}
+.logo{color:#d8b34e;font-size:34px;font-weight:bold}
+header p{color:#ddd}
+h2{color:#d8b34e}
+.hero{padding:55px 15px;background:#222}
+.hero h1{font-size:27px}
+.hero p{line-height:1.9;color:#ddd}
+.services{padding:25px 15px}
+.service{background:#202020;border:1px solid #806629;padding:20px;margin:12px auto;border-radius:12px;max-width:450px}
+.service h3{color:#e0bd59}
+button{background:#d5ad45;color:#111;border:0;padding:14px 25px;border-radius:8px;font-size:17px;font-weight:bold;cursor:pointer}
+footer{padding:25px;background:#191919;color:#ccc}
+a{text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">الفخامة</div>
+<p>للديكور والتشطيب</p>
+</header>
+
+<section class="hero">
+<h1>إبداع في التصميم وإتقان في التنفيذ</h1>
+<p>نقدم خدمات الديكور والتشطيبات بأعلى جودة واحترافية.</p>
+<a href="https://wa.me/249919040187?text=السلام%20عليكم،%20عايز%20أطلب%20عرض%20سعر%20من%20الفخامة">
+<button>اطلب السعر الآن</button>
+</a>
+</section>
+
+<section class="services">
+<h2>خدماتنا</h2>
+<div class="service"><h3>جبس بورد</h3><p>تصميم وتنفيذ جميع أشكال الجبس بورد.</p></div>
+<div class="service"><h3>نقاشة ودهانات</h3><p>دهانات وتشطيبات عصرية.</p></div>
+<div class="service"><h3>أسقف مستعارة</h3><p>تنفيذ الأسقف المستعارة بمختلف التصاميم.</p></div>
+<div class="service"><h3>ديكورات وتشطيبات</h3><p>لمسات جمالية وتشطيبات متكاملة.</p></div>
+</section>
+
+<footer>
+<p>للتواصل والاستفسار</p>
+<p>0919040187</p>
+<p>الفخامة للديكور والتشطيب © 2026</p>
+</footer>
+
+</body>
+</html>
