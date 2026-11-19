@@ -1,3 +1,4 @@
+
 {
   "name": "الفخامة للديكور والتشطيب",
   "short_name": "الفخامة",
@@ -11,9 +12,15 @@
   "theme_color": "#111111",
   "icons": [
     {
-      "src": "./icon.svg",
+      "src": "./fakhama-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./fakhama-icon-512(1).png",
       "sizes": "512x512",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]
