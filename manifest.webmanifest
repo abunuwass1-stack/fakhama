@@ -1,0 +1,12 @@
+{
+  "name": "الفخامة للديكور والتشطيب",
+  "short_name": "الفخامة",
+  "description": "إبداع في التصميم وإتقان في التنفيذ",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#111111"
+}
