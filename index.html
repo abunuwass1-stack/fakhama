@@ -1,29 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head><link rel="manifest" href="./manifest.webmanifest">
-<meta name="theme-color" content="#111111">
-<meta name="apple-mobile-web-app-capable" content="yes">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>الفخامة للديكور والتشطيب</title>
+<meta name="theme-color" content="#111111">
+<link rel="manifest" href="./manifest.webmanifest">
+
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#111;color:#fff;font-family:Arial,sans-serif;text-align:center}
-header{background:#171717;padding:25px 15px;border-bottom:2px solid #c9a23f}
+header{background:#171717;padding:25px;border-bottom:2px solid #c9a23f}
 .logo{color:#d8b34e;font-size:34px;font-weight:bold}
-header p{color:#ddd}
-h2{color:#d8b34e}
-.hero{padding:55px 15px;background:#222}
-.hero h1{font-size:27px}
-.hero p{line-height:1.9;color:#ddd}
-.services{padding:25px 15px}
+.hero{padding:45px 15px;background:#222}
+h2,h3{color:#d8b34e}
+.hero p{color:#ddd;line-height:1.8}
+.services,.quote{padding:25px 15px}
 .service{background:#202020;border:1px solid #806629;padding:20px;margin:12px auto;border-radius:12px;max-width:450px}
-.service h3{color:#e0bd59}
-button{background:#d5ad45;color:#111;border:0;padding:14px 25px;border-radius:8px;font-size:17px;font-weight:bold;cursor:pointer}
-footer{padding:25px;background:#191919;color:#ccc}
+.service p{line-height:1.8;color:#ddd}
+button{background:#d5ad45;color:#111;border:0;padding:14px;border-radius:8px;font-size:16px;font-weight:bold;width:100%;cursor:pointer}
 a{text-decoration:none}
+form{max-width:450px;margin:auto;background:#202020;padding:20px;border:1px solid #806629;border-radius:12px}
+label{display:block;text-align:right;margin:15px 0 7px;color:#e0bd59}
+select,input{width:100%;padding:14px;border-radius:8px;border:1px solid #777;background:#111;color:#fff;font-size:16px}
+footer{padding:25px;background:#191919;color:#ccc}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -34,17 +38,71 @@ a{text-decoration:none}
 <section class="hero">
 <h1>إبداع في التصميم وإتقان في التنفيذ</h1>
 <p>نقدم خدمات الديكور والتشطيبات بأعلى جودة واحترافية.</p>
-<a href="https://wa.me/249919040187?text=السلام%20عليكم،%20عايز%20أطلب%20عرض%20سعر%20من%20الفخامة">
-<button>اطلب السعر الآن</button>
-</a>
+<a href="#quote"><button>اطلب تسعيرتك الآن</button></a>
 </section>
 
 <section class="services">
 <h2>خدماتنا</h2>
-<div class="service"><h3>جبس بورد</h3><p>تصميم وتنفيذ جميع أشكال الجبس بورد.</p></div>
-<div class="service"><h3>نقاشة ودهانات</h3><p>دهانات وتشطيبات عصرية.</p></div>
-<div class="service"><h3>أسقف مستعارة</h3><p>تنفيذ الأسقف المستعارة بمختلف التصاميم.</p></div>
-<div class="service"><h3>ديكورات وتشطيبات</h3><p>لمسات جمالية وتشطيبات متكاملة.</p></div>
+
+<div class="service">
+<h3>جبس بورد</h3>
+<p>تصميم وتنفيذ جميع أشكال الجبس بورد.</p>
+<a href="https://wa.me/249919040187?text=السلام%20عليكم،%20أرغب%20في%20خدمة%20الجبس%20بورد">
+<button>اطلب الخدمة عبر واتساب</button>
+</a>
+</div>
+
+<div class="service">
+<h3>نقاشة ودهانات</h3>
+<p>دهانات وتشطيبات عصرية.</p>
+<a href="https://wa.me/249919040187?text=السلام%20عليكم،%20أرغب%20في%20خدمة%20النقاشة%20والدهانات">
+<button>اطلب الخدمة عبر واتساب</button>
+</a>
+</div>
+
+<div class="service">
+<h3>أسقف مستعارة</h3>
+<p>تنفيذ الأسقف المستعارة بمختلف التصاميم.</p>
+<a href="https://wa.me/249919040187?text=السلام%20عليكم،%20أرغب%20في%20خدمة%20الأسقف%20المستعارة">
+<button>اطلب الخدمة عبر واتساب</button>
+</a>
+</div>
+
+<div class="service">
+<h3>ديكورات وتشطيبات</h3>
+<p>لمسات جمالية وتشطيبات متكاملة.</p>
+<a href="https://wa.me/249919040187?text=السلام%20عليكم،%20أرغب%20في%20خدمة%20الديكورات%20والتشطيبات">
+<button>اطلب الخدمة عبر واتساب</button>
+</a>
+</div>
+
+</section>
+
+<section class="quote" id="quote">
+<h2>اطلب تسعيرتك</h2>
+<p>حدد الخدمة وموقع العمل وسنتواصل معك.</p>
+
+<form id="quoteForm">
+
+<label for="service">نوع الخدمة</label>
+
+<select id="service" required>
+<option value="">اختر الخدمة</option>
+<option>جبس بورد</option>
+<option>نقاشة ودهانات</option>
+<option>أسقف مستعارة</option>
+<option>ديكورات وتشطيبات</option>
+</select>
+
+<label for="location">موقع العمل</label>
+
+<input id="location" placeholder="مثال: أم درمان - الثورة" required>
+
+<button type="submit" style="margin-top:20px">
+إرسال الطلب عبر واتساب
+</button>
+
+</form>
 </section>
 
 <footer>
@@ -53,11 +111,30 @@ a{text-decoration:none}
 <p>الفخامة للديكور والتشطيب © 2026</p>
 </footer>
 
-</body><script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js");
-  });
+<script>
+document.getElementById('quoteForm').addEventListener('submit',function(e){
+e.preventDefault();
+
+const service=document.getElementById('service').value;
+const location=document.getElementById('location').value.trim();
+
+const message=
+'السلام عليكم، شركة الفخامة للديكور والتشطيب.\n'+
+'أرغب في طلب تسعيرة.\n'+
+'نوع الخدمة: '+service+'\n'+
+'موقع العمل: '+location+'\n'+
+'الرجاء التواصل معي. شكراً.';
+
+window.location.href=
+'https://wa.me/249919040187?text='+encodeURIComponent(message);
+});
+
+if ('serviceWorker' in navigator) {
+window.addEventListener('load',()=>{
+navigator.serviceWorker.register('./service-worker.js');
+});
 }
 </script>
+
+</body>
 </html>
