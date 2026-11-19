@@ -44,7 +44,43 @@ font-size:13px;
 .gallery-button{
 margin:20px auto;
 max-width:450px;
-} 
+/* تكبير صور معرض الأعمال */
+.image-modal{
+display:none;
+position:fixed;
+z-index:9999;
+inset:0;
+background:rgba(0,0,0,0.95);
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.image-modal img{
+max-width:100%;
+max-height:85vh;
+object-fit:contain;
+border-radius:10px;
+}
+
+.image-modal .close-modal{
+position:absolute;
+top:20px;
+left:20px;
+background:#d5ad45;
+color:#111;
+border:none;
+border-radius:50%;
+width:45px;
+height:45px;
+font-size:25px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.gallery-card img{
+cursor:zoom-in;
+}} 
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#111;color:#fff;font-family:Arial,sans-serif;text-align:center}
@@ -183,13 +219,33 @@ footer{padding:25px;background:#191919;color:#ccc}
 
 </form>
 </section>
-
+<div class="image-modal" id="imageModal">
+<button class="close-modal" onclick="closeImage()">×</button>
+<img id="modalImage" src="" alt="صورة من أعمال الفخامة">
+</div>
 <footer>
 <p>للتواصل والاستفسار</p>
 <p>0919040187</p>
 <p>الفخامة للديكور والتشطيب © 2026</p>
 </footer>
+// تكبير صور معرض الأعمال
+document.querySelectorAll('.gallery-card img').forEach(function(img){
+img.addEventListener('click',function(){
+document.getElementById('modalImage').src=this.src;
+document.getElementById('imageModal').style.display='flex';
+});
+});
 
+function closeImage(){
+document.getElementById('imageModal').style.display='none';
+document.getElementById('modalImage').src='';
+}
+
+document.getElementById('imageModal').addEventListener('click',function(e){
+if(e.target===this){
+closeImage();
+}
+});
 <script>
 document.getElementById('quoteForm').addEventListener('submit',function(e){
 e.preventDefault();
