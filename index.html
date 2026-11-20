@@ -1,4 +1,4 @@
- 
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -141,13 +141,20 @@ section {
 }
 
 .quote input,
-.quote select {
+.quote select,
+.quote textarea {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.quote textarea {
+  min-height: 120px;
+  resize: vertical;
 }
 
 .quote button {
@@ -161,8 +168,6 @@ section {
   font-weight: bold;
   cursor: pointer;
 }
-
-/* شروط الاتفاق */
 
 .terms-section {
   padding: 25px 15px;
@@ -386,9 +391,18 @@ footer a {
   <h2 class="section-title">اطلب تسعيرتك</h2>
 
   <div class="quote">
+
     <form id="quoteForm">
 
-      <label>نوع الخدمة</label>
+      <label for="customerName">اسم العميل</label>
+      <input
+        type="text"
+        id="customerName"
+        placeholder="اكتب اسمك"
+        required
+      >
+
+      <label for="service">نوع الخدمة</label>
       <select id="service" required>
         <option value="">اختر الخدمة</option>
         <option>جبس بورد</option>
@@ -398,16 +412,29 @@ footer a {
         <option>خدمات أخرى</option>
       </select>
 
-      <label>الموقع</label>
-      <input type="text" id="location" placeholder="مثلاً: أم درمان - الثورة" required>
+      <label for="location">موقع العمل</label>
+      <input
+        type="text"
+        id="location"
+        placeholder="مثلاً: أم درمان - الثورة"
+        required
+      >
 
-      <button type="submit">إرسال طلب التسعيرة عبر واتساب</button>
+      <label for="details">تفاصيل الطلب</label>
+      <textarea
+        id="details"
+        placeholder="اكتب تفاصيل العمل المطلوب، المساحة، التصميم أو أي ملاحظات..."
+        required
+      ></textarea>
+
+      <button type="submit">
+        إرسال طلب التسعيرة عبر واتساب
+      </button>
 
     </form>
+
   </div>
 </section>
-
-<!-- شروط الاتفاق في أسفل الصفحة -->
 
 <section class="terms-section">
 
@@ -473,14 +500,10 @@ footer a {
   </p>
 </footer>
 
-<!-- نافذة تكبير الصور -->
-
 <div class="modal" id="imageModal" onclick="closeImage()">
   <span class="modal-close">&times;</span>
   <img id="modalImage" src="" alt="صورة">
 </div>
-
-<!-- نافذة تفاصيل الخدمة -->
 
 <div class="service-detail" id="serviceDetail" onclick="closeServiceDetail()">
 
@@ -570,18 +593,30 @@ document.getElementById("quoteForm").addEventListener("submit", function(e) {
 
   e.preventDefault();
 
-  const service = document.getElementById("service").value;
-  const location = document.getElementById("location").value;
+  const customerName =
+    document.getElementById("customerName").value.trim();
+
+  const service =
+    document.getElementById("service").value;
+
+  const location =
+    document.getElementById("location").value.trim();
+
+  const details =
+    document.getElementById("details").value.trim();
 
   const message =
-    "السلام عليكم، عايز أطلب تسعيرة.\n" +
-    "الخدمة: " + service + "\n" +
-    "الموقع: " + location;
+    "طلب تسعيرة جديد - الفخامة للديكور والتشطيب\n\n" +
+    "اسم العميل: " + customerName + "\n" +
+    "الخدمة المطلوبة: " + service + "\n" +
+    "موقع العمل: " + location + "\n" +
+    "تفاصيل الطلب: " + details;
 
-  window.open(
-    "https://wa.me/" + phone + "?text=" + encodeURIComponent(message),
-    "_blank"
-  );
+  const whatsappUrl =
+    "https://wa.me/" + phone + "?text=" +
+    encodeURIComponent(message);
+
+  window.open(whatsappUrl, "_blank");
 
 });
 
