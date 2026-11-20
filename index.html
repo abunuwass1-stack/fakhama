@@ -89,28 +89,48 @@ section {
   color: #17212b;
 }
 
+/* شكل الخدمات الجديد */
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 900px;
+  margin: auto;
 }
 
 .service {
   background: white;
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 14px;
+  overflow: hidden;
   text-align: center;
   box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  padding-bottom: 12px;
+}
+
+.service-image {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  display: block;
 }
 
 .service h3 {
   color: #17212b;
-  margin-bottom: 10px;
+  font-size: 17px;
+  margin: 10px 5px 5px;
 }
 
 .service p {
   color: #555;
-  margin-bottom: 10px;
+  font-size: 13px;
+  padding: 0 8px;
+  margin-bottom: 8px;
+}
+
+.service .btn {
+  font-size: 13px;
+  padding: 8px 10px;
+  margin: 4px 2px;
 }
 
 .gallery {
@@ -294,6 +314,32 @@ footer a {
   cursor: pointer;
 }
 
+@media (max-width: 360px) {
+  .service-image {
+    height: 110px;
+  }
+
+  .service h3 {
+    font-size: 15px;
+  }
+
+  .service .btn {
+    font-size: 12px;
+    padding: 7px;
+  }
+}
+
+@media (min-width: 600px) {
+  .services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .service-image {
+    height: 200px;
+  }
+}
+
 @media (max-width: 400px) {
   .gallery img {
     height: 140px;
@@ -327,44 +373,72 @@ footer a {
   <div class="services">
 
     <div class="service">
+      <img class="service-image"
+      src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=600&q=80"
+      alt="الجبس بورد">
+
       <h3>الجبس بورد</h3>
-      <p>تصميم وتنفيذ ديكورات الجبس بورد بأشكال عصرية ومميزة.</p>
-      <a class="btn whatsapp" href="https://wa.me/249919040187?text=السلام%20عليكم%20عايز%20خدمة%20الجبس%20بورد">
+      <p>تصميم وتنفيذ ديكورات الجبس بورد بأشكال عصرية.</p>
+
+      <a class="btn whatsapp"
+      href="https://wa.me/249919040187?text=السلام%20عليكم%20عايز%20خدمة%20الجبس%20بورد">
         اطلب الخدمة
       </a>
+
       <button class="btn details-btn" onclick="showServiceDetail(0)">
         تفاصيل الخدمة
       </button>
     </div>
 
     <div class="service">
+      <img class="service-image"
+      src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80"
+      alt="النقاشة والدهانات">
+
       <h3>النقاشة والدهانات</h3>
-      <p>دهانات داخلية وخارجية بألوان جميلة وتشطيبات احترافية.</p>
-      <a class="btn whatsapp" href="https://wa.me/249919040187?text=السلام%20عليكم%20عايز%20خدمة%20النقاشة">
+      <p>دهانات داخلية وخارجية وتشطيبات احترافية.</p>
+
+      <a class="btn whatsapp"
+      href="https://wa.me/249919040187?text=السلام%20عليكم%20عايز%20خدمة%20النقاشة">
         اطلب الخدمة
       </a>
+
       <button class="btn details-btn" onclick="showServiceDetail(1)">
         تفاصيل الخدمة
       </button>
     </div>
 
     <div class="service">
+      <img class="service-image"
+      src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80"
+      alt="الأسقف المستعارة">
+
       <h3>الأسقف المستعارة</h3>
-      <p>تنفيذ الأسقف المستعارة وتصاميم الإضاءة الحديثة.</p>
-      <a class="btn whatsapp" href="https://wa.me/249919040187?text=السلام%20عليكم%20عايز%20خدمة%20الأسقف%20المستعارة">
+      <p>تنفيذ الأسقف وتصاميم الإضاءة الحديثة.</p>
+
+      <a class="btn whatsapp"
+      href="https://wa.me/249919040187?text=السلام%20عليكم%20عايز%20خدمة%20الأسقف%20المستعارة">
         اطلب الخدمة
       </a>
+
       <button class="btn details-btn" onclick="showServiceDetail(2)">
         تفاصيل الخدمة
       </button>
     </div>
 
     <div class="service">
+      <img class="service-image"
+      src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=600&q=80"
+      alt="الديكور والتشطيب">
+
       <h3>الديكور والتشطيب</h3>
-      <p>تشطيبات متكاملة وديكورات للمنازل والمحلات والمكاتب.</p>
-      <a class="btn whatsapp" href="https://wa.me/249919040187?text=السلام%20عليكم%20عايز%20خدمة%20الديكور%20والتشطيب">
+      <p>تشطيبات متكاملة للمنازل والمحلات والمكاتب.</p>
+
+      <a class="btn whatsapp"
+      href="https://wa.me/249919040187?text=السلام%20عليكم%20عايز%20خدمة%20الديكور%20والتشطيب">
         اطلب الخدمة
       </a>
+
       <button class="btn details-btn" onclick="showServiceDetail(3)">
         تفاصيل الخدمة
       </button>
@@ -391,16 +465,10 @@ footer a {
   <h2 class="section-title">اطلب تسعيرتك</h2>
 
   <div class="quote">
-
     <form id="quoteForm">
 
       <label for="customerName">اسم العميل</label>
-      <input
-        type="text"
-        id="customerName"
-        placeholder="اكتب اسمك"
-        required
-      >
+      <input type="text" id="customerName" placeholder="اكتب اسمك" required>
 
       <label for="service">نوع الخدمة</label>
       <select id="service" required>
@@ -413,26 +481,16 @@ footer a {
       </select>
 
       <label for="location">موقع العمل</label>
-      <input
-        type="text"
-        id="location"
-        placeholder="مثلاً: أم درمان - الثورة"
-        required
-      >
+      <input type="text" id="location" placeholder="مثلاً: أم درمان - الثورة" required>
 
       <label for="details">تفاصيل الطلب</label>
-      <textarea
-        id="details"
-        placeholder="اكتب تفاصيل العمل المطلوب، المساحة، التصميم أو أي ملاحظات..."
-        required
-      ></textarea>
+      <textarea id="details" placeholder="اكتب تفاصيل العمل المطلوب، المساحة، التصميم أو أي ملاحظات..." required></textarea>
 
       <button type="submit">
         إرسال طلب التسعيرة عبر واتساب
       </button>
 
     </form>
-
   </div>
 </section>
 
@@ -448,37 +506,14 @@ footer a {
     <h3>شروط الاتفاق - الفخامة للديكور والتشطيب</h3>
 
     <ol>
-      <li>
-        يتم الاتفاق على نوع الخدمة والتصميم المطلوب قبل بدء التنفيذ.
-      </li>
-
-      <li>
-        يتم تحديد تكلفة العمل والمواد بصورة واضحة قبل بداية العمل.
-      </li>
-
-      <li>
-        يتم دفع مقدم حسب الاتفاق بين الطرفين.
-      </li>
-
-      <li>
-        أي إضافات أو تغييرات بعد الاتفاق الأول يتم تقدير تكلفتها بصورة منفصلة.
-      </li>
-
-      <li>
-        يتم تحديد مدة التنفيذ حسب حجم العمل والظروف المتاحة.
-      </li>
-
-      <li>
-        يلتزم العميل بتوفير الموقع جاهزاً للعمل، ما لم يتم الاتفاق على خلاف ذلك.
-      </li>
-
-      <li>
-        يتم تسليم العمل بعد المراجعة والتأكد من مطابقته للاتفاق.
-      </li>
-
-      <li>
-        أي خلاف يتم حله بالتفاهم والتراضي بين الطرفين.
-      </li>
+      <li>يتم الاتفاق على نوع الخدمة والتصميم المطلوب قبل بدء التنفيذ.</li>
+      <li>يتم تحديد تكلفة العمل والمواد بصورة واضحة قبل بداية العمل.</li>
+      <li>يتم دفع مقدم حسب الاتفاق بين الطرفين.</li>
+      <li>أي إضافات أو تغييرات بعد الاتفاق الأول يتم تقدير تكلفتها بصورة منفصلة.</li>
+      <li>يتم تحديد مدة التنفيذ حسب حجم العمل والظروف المتاحة.</li>
+      <li>يلتزم العميل بتوفير الموقع جاهزاً للعمل، ما لم يتم الاتفاق على خلاف ذلك.</li>
+      <li>يتم تسليم العمل بعد المراجعة والتأكد من مطابقته للاتفاق.</li>
+      <li>أي خلاف يتم حله بالتفاهم والتراضي بين الطرفين.</li>
     </ol>
 
     <div class="terms-note">
@@ -512,7 +547,6 @@ footer a {
     <span class="detail-close" onclick="closeServiceDetail()">&times;</span>
 
     <h2 id="detailTitle"></h2>
-
     <p id="detailText"></p>
 
     <a id="detailWhatsApp" class="btn whatsapp" href="#" target="_blank">
