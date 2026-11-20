@@ -1,70 +1,251 @@
-
+ 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17212b">
 <title>الفخامة للديكور والتشطيب</title>
-<meta name="theme-color" content="#111111">
 <link rel="manifest" href="./manifest.webmanifest">
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#111;color:#fff;font-family:Arial,sans-serif;text-align:center}
-header{background:#171717;padding:25px;border-bottom:2px solid #c9a23f}
-.logo{color:#d8b34e;font-size:34px;font-weight:bold}
-.hero{padding:45px 15px;background:#222}
-h2,h3{color:#d8b34e}
-.hero p{color:#ddd;line-height:1.8}
-.services,.quote{padding:25px 15px}
-.service{background:#202020;border:1px solid #806629;padding:20px;margin:12px auto;border-radius:12px;max-width:450px}
-.service p{line-height:1.8;color:#ddd}
-button{background:#d5ad45;color:#111;border:0;padding:14px;border-radius:8px;font-size:16px;font-weight:bold;width:100%;cursor:pointer}
-a{text-decoration:none}
-form{max-width:450px;margin:auto;background:#202020;padding:20px;border:1px solid #806629;border-radius:12px}
-label{display:block;text-align:right;margin:15px 0 7px;color:#e0bd59}
-select,input{width:100%;padding:14px;border-radius:8px;border:1px solid #777;background:#111;color:#fff;font-size:16px}
-footer{padding:25px;background:#191919;color:#ccc}
-
-.gallery{padding:25px 15px;background:#171717}
-.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:600px;margin:auto}
-.gallery-card{background:#222;border:1px solid #806629;border-radius:12px;overflow:hidden}
-.gallery-card img{width:100%;height:180px;object-fit:cover;display:block;cursor:zoom-in}
-.gallery-card h3{padding:10px;margin:0;font-size:16px}
-.gallery-card p{color:#ccc;padding:0 10px 10px;margin:0;font-size:13px}
-.gallery-button{margin:20px auto;max-width:450px}
-
-.image-modal{
-display:none;
-position:fixed;
-z-index:9999;
-inset:0;
-background:rgba(0,0,0,0.95);
-align-items:center;
-justify-content:center;
-padding:20px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.image-modal img{
-max-width:100%;
-max-height:85vh;
-object-fit:contain;
-border-radius:10px;
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  line-height: 1.8;
 }
 
-.image-modal .close-modal{
-position:absolute;
-top:20px;
-left:20px;
-background:#d5ad45;
-color:#111;
-border:none;
-border-radius:50%;
-width:45px;
-height:45px;
-font-size:25px;
-font-weight:bold;
-cursor:pointer;
+header {
+  background: #17212b;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: #d6b36a;
+}
+
+header p {
+  font-size: 15px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #17212b, #394957);
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.hero h1 {
+  color: #d6b36a;
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.whatsapp {
+  background: #25d366;
+  color: white;
+}
+
+.details-btn {
+  background: #17212b;
+  color: white;
+}
+
+section {
+  padding: 30px 15px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 25px;
+  color: #17212b;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.service {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.service h3 {
+  color: #17212b;
+  margin-bottom: 10px;
+}
+
+.service p {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gallery img:hover {
+  transform: scale(1.02);
+}
+
+.quote {
+  background: white;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+.quote input,
+.quote select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.quote button {
+  width: 100%;
+  padding: 14px;
+  background: #25d366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+footer {
+  background: #17212b;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+footer a {
+  color: #d6b36a;
+  text-decoration: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.service-detail {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(0,0,0,0.75);
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-box {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+  padding: 25px;
+  position: relative;
+  text-align: center;
+}
+
+.detail-box h2 {
+  color: #17212b;
+  margin-bottom: 15px;
+}
+
+.detail-box p {
+  margin-bottom: 20px;
+}
+
+.detail-close {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .gallery img {
+    height: 140px;
+  }
+
+  .hero h1 {
+    font-size: 23px;
+  }
 }
 </style>
 </head>
@@ -72,168 +253,210 @@ cursor:pointer;
 <body>
 
 <header>
-<div class="logo">الفخامة</div>
-<p>للديكور والتشطيب</p>
+  <div class="logo">الفخامة</div>
+  <p>للديكور والتشطيب</p>
 </header>
 
-<section class="hero">
-<h1>إبداع في التصميم وإتقان في التنفيذ</h1>
-<p>نقدم خدمات الديكور والتشطيبات بأعلى جودة واحترافية.</p>
-<a href="#quote"><button>اطلب تسعيرتك الآن</button></a>
+<div class="hero">
+  <h1>إبداع في التصميم وإتقان في التنفيذ</h1>
+  <p>نحوّل أفكارك إلى واقع بأجمل التصاميم وأفضل جودة</p>
+  <a class="btn whatsapp" href="https://wa.me/249919040187">
+    اطلب تسعيرتك الآن
+  </a>
+</div>
+
+<section>
+  <h2 class="section-title">خدماتنا</h2>
+
+  <div class="services">
+
+    <div class="service">
+      <h3>الجبس بورد</h3>
+      <p>تصميم وتنفيذ ديكورات الجبس بورد بأشكال عصرية ومميزة.</p>
+      <a class="btn whatsapp" href="https://wa.me/249919040187?text=السلام%20عليكم%20عايز%20خدمة%20الجبس%20بورد">
+        اطلب الخدمة
+      </a>
+      <button class="btn details-btn" onclick="showServiceDetail(0)">
+        تفاصيل الخدمة
+      </button>
+    </div>
+
+    <div class="service">
+      <h3>النقاشة والدهانات</h3>
+      <p>دهانات داخلية وخارجية بألوان جميلة وتشطيبات احترافية.</p>
+      <a class="btn whatsapp" href="https://wa.me/249919040187?text=السلام%20عليكم%20عايز%20خدمة%20النقاشة">
+        اطلب الخدمة
+      </a>
+      <button class="btn details-btn" onclick="showServiceDetail(1)">
+        تفاصيل الخدمة
+      </button>
+    </div>
+
+    <div class="service">
+      <h3>الأسقف المستعارة</h3>
+      <p>تنفيذ الأسقف المستعارة وتصاميم الإضاءة الحديثة.</p>
+      <a class="btn whatsapp" href="https://wa.me/249919040187?text=السلام%20عليكم%20عايز%20خدمة%20الأسقف%20المستعارة">
+        اطلب الخدمة
+      </a>
+      <button class="btn details-btn" onclick="showServiceDetail(2)">
+        تفاصيل الخدمة
+      </button>
+    </div>
+
+    <div class="service">
+      <h3>الديكور والتشطيب</h3>
+      <p>تشطيبات متكاملة وديكورات للمنازل والمحلات والمكاتب.</p>
+      <a class="btn whatsapp" href="https://wa.me/249919040187?text=السلام%20عليكم%20عايز%20خدمة%20الديكور%20والتشطيب">
+        اطلب الخدمة
+      </a>
+      <button class="btn details-btn" onclick="showServiceDetail(3)">
+        تفاصيل الخدمة
+      </button>
+    </div>
+
+  </div>
 </section>
 
-<section class="services">
-<h2>خدماتنا</h2>
+<section>
+  <h2 class="section-title">معرض أعمالنا</h2>
 
-<div class="service">
-<h3>جبس بورد</h3>
-<p>تصميم وتنفيذ جميع أشكال الجبس بورد.</p>
-<a href="https://wa.me/249919040187?text=السلام%20عليكم،%20أرغب%20في%20خدمة%20الجبس%20بورد">
-<button>اطلب الخدمة عبر واتساب</button>
-</a>
-</div>
-
-<div class="service">
-<h3>نقاشة ودهانات</h3>
-<p>دهانات وتشطيبات عصرية.</p>
-<a href="https://wa.me/249919040187?text=السلام%20عليكم،%20أرغب%20في%20خدمة%20النقاشة%20والدهانات">
-<button>اطلب الخدمة عبر واتساب</button>
-</a>
-</div>
-
-<div class="service">
-<h3>أسقف مستعارة</h3>
-<p>تنفيذ الأسقف المستعارة بمختلف التصاميم.</p>
-<a href="https://wa.me/249919040187?text=السلام%20عليكم،%20أرغب%20في%20خدمة%20الأسقف%20المستعارة">
-<button>اطلب الخدمة عبر واتساب</button>
-</a>
-</div>
-
-<div class="service">
-<h3>ديكورات وتشطيبات</h3>
-<p>لمسات جمالية وتشطيبات متكاملة.</p>
-<a href="https://wa.me/249919040187?text=السلام%20عليكم،%20أرغب%20في%20خدمة%20الديكورات%20والتشطيبات">
-<button>اطلب الخدمة عبر واتساب</button>
-</a>
-</div>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=600&q=80" onclick="openImage(this.src)" alt="ديكور جبس بورد">
+    
+    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" onclick="openImage(this.src)" alt="ديكور داخلي">
+    
+    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" onclick="openImage(this.src)" alt="تشطيب">
+    
+    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=600&q=80" onclick="openImage(this.src)" alt="تصميم داخلي">
+  </div>
 </section>
 
-<section class="gallery">
-<h2>معرض أعمال الفخامة</h2>
-<p style="color:#ccc">شاهد نماذج من أعمال وتصاميم الديكور والتشطيب</p>
+<section>
+  <h2 class="section-title">اطلب تسعيرتك</h2>
 
-<div class="gallery-grid">
+  <div class="quote">
+    <form id="quoteForm">
 
-<div class="gallery-card">
-<img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=600&q=80" alt="جبس بورد">
-<h3>جبس بورد</h3>
-<p>تصاميم جبس بورد عصرية</p>
-</div>
+      <label>نوع الخدمة</label>
+      <select id="service" required>
+        <option value="">اختر الخدمة</option>
+        <option>جبس بورد</option>
+        <option>نقاشة ودهانات</option>
+        <option>أسقف مستعارة</option>
+        <option>ديكور وتشطيب</option>
+        <option>خدمات أخرى</option>
+      </select>
 
-<div class="gallery-card">
-<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="ديكورات داخلية">
-<h3>ديكورات داخلية</h3>
-<p>تصاميم وديكورات مميزة</p>
-</div>
+      <label>الموقع</label>
+      <input type="text" id="location" placeholder="مثلاً: أم درمان - الثورة" required>
 
-<div class="gallery-card">
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" alt="تشطيبات">
-<h3>تشطيبات</h3>
-<p>تشطيبات عصرية وأنيقة</p>
-</div>
+      <button type="submit">إرسال طلب التسعيرة عبر واتساب</button>
 
-<div class="gallery-card">
-<img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=600&q=80" alt="أسقف مستعارة">
-<h3>أسقف مستعارة</h3>
-<p>تنفيذ مختلف أشكال الأسقف</p>
-</div>
-
-</div>
-
-<div class="gallery-button">
-<a href="https://wa.me/249919040187?text=السلام%20عليكم،%20أرغب%20في%20مشاهدة%20أعمال%20الفخامة">
-<button>اطلب مشاهدة المزيد من الأعمال</button>
-</a>
-</div>
+    </form>
+  </div>
 </section>
-
-<section class="quote" id="quote">
-<h2>اطلب تسعيرتك</h2>
-<p>حدد الخدمة وموقع العمل وسنتواصل معك.</p>
-
-<form id="quoteForm">
-
-<label for="service">نوع الخدمة</label>
-<select id="service" required>
-<option value="">اختر الخدمة</option>
-<option>جبس بورد</option>
-<option>نقاشة ودهانات</option>
-<option>أسقف مستعارة</option>
-<option>ديكورات وتشطيبات</option>
-</select>
-
-<label for="location">موقع العمل</label>
-<input id="location" placeholder="مثال: أم درمان - الثورة" required>
-
-<button type="submit" style="margin-top:20px">
-إرسال الطلب عبر واتساب
-</button>
-
-</form>
-</section>
-
-<div class="image-modal" id="imageModal">
-<button class="close-modal" onclick="closeImage()">×</button>
-<img id="modalImage" src="" alt="صورة من أعمال الفخامة">
-</div>
 
 <footer>
-<p>للتواصل والاستفسار</p>
-<p>0919040187</p>
-<p>الفخامة للديكور والتشطيب © 2026</p>
+  <h3>الفخامة للديكور والتشطيب</h3>
+  <p>إبداع في التصميم وإتقان في التنفيذ</p>
+  <p>للتواصل: <a href="tel:0919040187">0919040187</a></p>
+  <p>
+    <a href="https://wa.me/249919040187">تواصل معنا عبر واتساب</a>
+  </p>
 </footer>
+
+<!-- نافذة تكبير الصور -->
+<div class="modal" id="imageModal" onclick="closeImage()">
+  <span class="modal-close">&times;</span>
+  <img id="modalImage" src="" alt="صورة">
+</div>
+
+<!-- نافذة تفاصيل الخدمة -->
+<div class="service-detail" id="serviceDetail" onclick="closeServiceDetail()">
+  <div class="detail-box" onclick="event.stopPropagation()">
+    <span class="detail-close" onclick="closeServiceDetail()">&times;</span>
+    <h2 id="detailTitle"></h2>
+    <p id="detailText"></p>
+    <a id="detailWhatsApp" class="btn whatsapp" href="#" target="_blank">
+      اطلب الخدمة عبر واتساب
+    </a>
+  </div>
+</div>
 
 <script>
 
-document.getElementById('quoteForm').addEventListener('submit',function(e){
-e.preventDefault();
+const phone = "249919040187";
 
-const service=document.getElementById('service').value;
-const location=document.getElementById('location').value.trim();
+const serviceDetails = [
+  {
+    title: "الجبس بورد",
+    text: "نقدم أعمال الجبس بورد بمختلف الأنواع والأشكال، بما في ذلك الأسقف المسطحة، والبوكسات، والتصاميم الحديثة، والديكورات الجدارية، مع تنفيذ دقيق وتشطيب ممتاز."
+  },
+  {
+    title: "النقاشة والدهانات",
+    text: "تنفيذ أعمال النقاشة والدهانات الداخلية والخارجية، وتجهيز الجدران، والمعجون، والصنفرة، واختيار الألوان المناسبة، مع الاهتمام بجودة التشطيب."
+  },
+  {
+    title: "الأسقف المستعارة",
+    text: "تصميم وتنفيذ الأسقف المستعارة بأشكال متنوعة، مع إمكانية إضافة الإضاءة المخفية والسبوتات والديكورات الحديثة."
+  },
+  {
+    title: "الديكور والتشطيب",
+    text: "تنفيذ أعمال الديكور والتشطيب للمنازل والمحلات والمكاتب، وتنسيق المساحات، وتقديم حلول عملية وجمالية تناسب احتياجات العميل."
+  }
+];
 
-const message=
-'السلام عليكم، شركة الفخامة للديكور والتشطيب.\n'+
-'أرغب في طلب تسعيرة.\n'+
-'نوع الخدمة: '+service+'\n'+
-'موقع العمل: '+location+'\n'+
-'الرجاء التواصل معي. شكراً.';
+function showServiceDetail(index) {
+  document.getElementById("detailTitle").textContent =
+    serviceDetails[index].title;
 
-window.location.href=
-'https://wa.me/249919040187?text='+encodeURIComponent(message);
-});
+  document.getElementById("detailText").textContent =
+    serviceDetails[index].text;
 
-document.querySelectorAll('.gallery-card img').forEach(function(img){
-img.addEventListener('click',function(){
-document.getElementById('modalImage').src=this.src;
-document.getElementById('imageModal').style.display='flex';
-});
-});
+  document.getElementById("detailWhatsApp").href =
+    "https://wa.me/" + phone + "?text=" +
+    encodeURIComponent("السلام عليكم، عايز تفاصيل وطلب خدمة " + serviceDetails[index].title);
 
-function closeImage(){
-document.getElementById('imageModal').style.display='none';
-document.getElementById('modalImage').src='';
+  document.getElementById("serviceDetail").style.display = "flex";
 }
 
-document.getElementById('imageModal').addEventListener('click',function(e){
-if(e.target===this){
-closeImage();
+function closeServiceDetail() {
+  document.getElementById("serviceDetail").style.display = "none";
 }
+
+function openImage(src) {
+  document.getElementById("modalImage").src = src;
+  document.getElementById("imageModal").style.display = "flex";
+}
+
+function closeImage() {
+  document.getElementById("imageModal").style.display = "none";
+}
+
+document.getElementById("quoteForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const service = document.getElementById("service").value;
+  const location = document.getElementById("location").value;
+
+  const message =
+    "السلام عليكم، عايز أطلب تسعيرة.\n" +
+    "الخدمة: " + service + "\n" +
+    "الموقع: " + location;
+
+  window.open(
+    "https://wa.me/" + phone + "?text=" + encodeURIComponent(message),
+    "_blank"
+  );
 });
 
-if('serviceWorker' in navigator){
-window.addEventListener('load',()=>{
-navigator.serviceWorker.register('./service-worker.js');
-});
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker.register("./service-worker.js")
+      .catch(function(error) {
+        console.log("Service Worker:", error);
+      });
+  });
 }
 
 </script>
