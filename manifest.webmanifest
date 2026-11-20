@@ -1,24 +1,26 @@
 
 {
+  "id": "/fakhama/",
   "name": "الفخامة للديكور والتشطيب",
   "short_name": "الفخامة",
   "description": "إبداع في التصميم وإتقان في التنفيذ",
   "lang": "ar",
   "dir": "rtl",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/fakhama/?source=pwa",
+  "scope": "/fakhama/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "background_color": "#111111",
   "theme_color": "#111111",
   "icons": [
     {
-      "src": "./fakhama-icon-192.png",
+      "src": "/fakhama/fakhama-icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./fakhama-icon-512(1).png",
+      "src": "/fakhama/fakhama-icon-512(1).png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
