@@ -162,6 +162,57 @@ section {
   cursor: pointer;
 }
 
+/* شروط الاتفاق */
+
+.terms-section {
+  padding: 25px 15px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.terms-button {
+  width: 100%;
+  background: #17212b;
+  color: #d6b36a;
+  border: 1px solid #d6b36a;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.terms-content {
+  display: none;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.terms-content h3 {
+  color: #17212b;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.terms-content ol {
+  padding-right: 22px;
+}
+
+.terms-content li {
+  margin-bottom: 12px;
+}
+
+.terms-note {
+  background: #f8f3e8;
+  border-right: 4px solid #d6b36a;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 6px;
+}
+
 footer {
   background: #17212b;
   color: white;
@@ -322,11 +373,11 @@ footer a {
 
   <div class="gallery">
     <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=600&q=80" onclick="openImage(this.src)" alt="ديكور جبس بورد">
-    
+
     <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" onclick="openImage(this.src)" alt="ديكور داخلي">
-    
+
     <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" onclick="openImage(this.src)" alt="تشطيب">
-    
+
     <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=600&q=80" onclick="openImage(this.src)" alt="تصميم داخلي">
   </div>
 </section>
@@ -356,6 +407,63 @@ footer a {
   </div>
 </section>
 
+<!-- شروط الاتفاق في أسفل الصفحة -->
+
+<section class="terms-section">
+
+  <button class="terms-button" onclick="toggleTerms()">
+    📋 شروط الاتفاق
+    <span id="termsArrow">▼</span>
+  </button>
+
+  <div class="terms-content" id="termsContent">
+
+    <h3>شروط الاتفاق - الفخامة للديكور والتشطيب</h3>
+
+    <ol>
+      <li>
+        يتم الاتفاق على نوع الخدمة والتصميم المطلوب قبل بدء التنفيذ.
+      </li>
+
+      <li>
+        يتم تحديد تكلفة العمل والمواد بصورة واضحة قبل بداية العمل.
+      </li>
+
+      <li>
+        يتم دفع مقدم حسب الاتفاق بين الطرفين.
+      </li>
+
+      <li>
+        أي إضافات أو تغييرات بعد الاتفاق الأول يتم تقدير تكلفتها بصورة منفصلة.
+      </li>
+
+      <li>
+        يتم تحديد مدة التنفيذ حسب حجم العمل والظروف المتاحة.
+      </li>
+
+      <li>
+        يلتزم العميل بتوفير الموقع جاهزاً للعمل، ما لم يتم الاتفاق على خلاف ذلك.
+      </li>
+
+      <li>
+        يتم تسليم العمل بعد المراجعة والتأكد من مطابقته للاتفاق.
+      </li>
+
+      <li>
+        أي خلاف يتم حله بالتفاهم والتراضي بين الطرفين.
+      </li>
+    </ol>
+
+    <div class="terms-note">
+      <strong>ملاحظة:</strong>
+      يتم اعتماد التفاصيل النهائية للعمل والتكلفة والمدة
+      بعد المعاينة والاتفاق بين الطرفين.
+    </div>
+
+  </div>
+
+</section>
+
 <footer>
   <h3>الفخامة للديكور والتشطيب</h3>
   <p>إبداع في التصميم وإتقان في التنفيذ</p>
@@ -366,21 +474,30 @@ footer a {
 </footer>
 
 <!-- نافذة تكبير الصور -->
+
 <div class="modal" id="imageModal" onclick="closeImage()">
   <span class="modal-close">&times;</span>
   <img id="modalImage" src="" alt="صورة">
 </div>
 
 <!-- نافذة تفاصيل الخدمة -->
+
 <div class="service-detail" id="serviceDetail" onclick="closeServiceDetail()">
+
   <div class="detail-box" onclick="event.stopPropagation()">
+
     <span class="detail-close" onclick="closeServiceDetail()">&times;</span>
+
     <h2 id="detailTitle"></h2>
+
     <p id="detailText"></p>
+
     <a id="detailWhatsApp" class="btn whatsapp" href="#" target="_blank">
       اطلب الخدمة عبر واتساب
     </a>
+
   </div>
+
 </div>
 
 <script>
@@ -407,6 +524,7 @@ const serviceDetails = [
 ];
 
 function showServiceDetail(index) {
+
   document.getElementById("detailTitle").textContent =
     serviceDetails[index].title;
 
@@ -433,7 +551,23 @@ function closeImage() {
   document.getElementById("imageModal").style.display = "none";
 }
 
+function toggleTerms() {
+
+  const content = document.getElementById("termsContent");
+  const arrow = document.getElementById("termsArrow");
+
+  if (content.style.display === "block") {
+    content.style.display = "none";
+    arrow.textContent = "▼";
+  } else {
+    content.style.display = "block";
+    arrow.textContent = "▲";
+  }
+
+}
+
 document.getElementById("quoteForm").addEventListener("submit", function(e) {
+
   e.preventDefault();
 
   const service = document.getElementById("service").value;
@@ -448,15 +582,20 @@ document.getElementById("quoteForm").addEventListener("submit", function(e) {
     "https://wa.me/" + phone + "?text=" + encodeURIComponent(message),
     "_blank"
   );
+
 });
 
 if ("serviceWorker" in navigator) {
+
   window.addEventListener("load", function() {
+
     navigator.serviceWorker.register("./service-worker.js")
       .catch(function(error) {
         console.log("Service Worker:", error);
       });
+
   });
+
 }
 
 </script>
