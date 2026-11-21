@@ -8,7 +8,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#f5f5f3;--card:#fff;--dark:#17212b;--gold:#c9a45c;--text:#222;--muted:#777;--border:#e7e7e7}
-body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);padding-bottom:85px}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);padding-bottom:90px}
 button,input,textarea,select{font-family:inherit}button{cursor:pointer;border:0}
 header{background:var(--dark);color:white;padding:18px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-size:22px;font-weight:bold;color:var(--gold)}.logo small{display:block;font-size:11px;color:white;margin-top:5px}
@@ -25,8 +25,8 @@ header{background:var(--dark);color:white;padding:18px;display:flex;align-items:
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.gallery img{width:100%;height:150px;object-fit:cover;border-radius:12px;cursor:pointer}
 input,textarea,select{width:100%;padding:13px;border:1px solid var(--border);border-radius:10px;margin-top:8px;background:white;font-size:15px}
 textarea{min-height:100px;resize:vertical}.form-group{margin-bottom:15px}label{font-weight:bold;font-size:14px}
-.bottom-nav{position:fixed;bottom:0;right:0;left:0;background:white;display:flex;justify-content:space-around;padding:9px 4px;box-shadow:0 -3px 15px rgba(0,0,0,.08);z-index:100}
-.nav-item{background:transparent;color:#777;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;flex:1}.nav-item .nav-icon{font-size:22px}.nav-item.active{color:var(--gold);font-weight:bold}
+.bottom-nav{position:fixed;bottom:0;right:0;left:0;background:white;display:flex;justify-content:space-around;padding:8px 2px;box-shadow:0 -3px 15px rgba(0,0,0,.08);z-index:100}
+.nav-item{background:transparent;color:#777;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10px;flex:1;min-width:0;padding:3px 0}.nav-item .nav-icon{font-size:20px}.nav-item.active{color:var(--gold);font-weight:bold}
 .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:var(--dark);color:white;border-radius:12px;padding:18px;text-align:center}.stat strong{display:block;font-size:25px;color:var(--gold);margin-bottom:5px}
 .order{background:white;padding:15px;border-radius:12px;margin-bottom:12px;border-right:4px solid var(--gold)}.order h3{margin-bottom:8px}.order p{font-size:14px;line-height:1.8;color:#555}
 .order-actions{display:flex;gap:8px;margin-top:10px}.order-actions button{flex:1;padding:9px;border-radius:8px}
@@ -34,13 +34,18 @@ textarea{min-height:100px;resize:vertical}.form-group{margin-bottom:15px}label{f
 footer{text-align:center;color:var(--muted);padding:25px 10px;font-size:12px}
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:200;justify-content:center;align-items:center;padding:15px}.modal.active{display:flex}
 .image-modal img{max-width:100%;max-height:80vh;border-radius:10px}
-.setting-item{background:white;padding:15px;border-radius:12px;margin-bottom:10px}.empty{text-align:center;padding:30px;color:#888}
-.whatsapp-float{position:fixed;bottom:90px;left:15px;background:#25d366;color:white;border-radius:50%;width:55px;height:55px;font-size:25px;z-index:99;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.setting-item{background:white;padding:15px;border-radius:12px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,.035)}
+.setting-menu{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:15px}
+.setting-link{background:white;border:1px solid var(--border);border-radius:14px;padding:18px 10px;text-align:center;color:var(--dark);font-weight:bold;min-height:105px}
+.setting-link span{display:block;font-size:27px;margin-bottom:9px}
+.empty{text-align:center;padding:30px;color:#888}
+.whatsapp-float{position:fixed;bottom:100px;left:15px;background:#25d366;color:white;border-radius:50%;width:55px;height:55px;font-size:25px;z-index:99;box-shadow:0 4px 10px rgba(0,0,0,.2)}
 @media(min-width:600px){.grid,.gallery{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
 <header><div class="logo">الفخامة<small>للديكور والتشطيب</small></div><button class="header-btn" onclick="goPage('request')">اطلب خدمة</button></header>
+
 <section class="page active" id="home">
 <div class="hero"><h1>الفخامة للديكور والتشطيب</h1><p>نصنع الجمال في تفاصيل منزلك. خدمات الديكور والتشطيب بجودة عالية وتنفيذ احترافي.</p><button onclick="goPage('services')">اكتشف خدماتنا</button></div>
 <h2 class="section-title">خدماتنا</h2><div class="grid" id="homeServices"></div>
@@ -48,7 +53,9 @@ footer{text-align:center;color:var(--muted);padding:25px 10px;font-size:12px}
 <div class="card"><h3>⭐ جودة التنفيذ</h3><p>اهتمام بالتفاصيل وجودة العمل.</p></div><div class="card"><h3>🤝 التزام</h3><p>التزام بالاتفاق مع العميل.</p></div>
 <div class="card"><h3>🏠 تصميم مميز</h3><p>حلول ديكور تناسب مختلف المساحات.</p></div><div class="card"><h3>💰 أسعار مناسبة</h3><p>خيارات تناسب ميزانيتك.</p></div></div>
 <button class="gold-btn" onclick="goPage('request')">اطلب تسعيرة الآن</button></section>
+
 <section class="page" id="services"><h2 class="section-title">جميع خدماتنا</h2><div class="grid" id="servicesList"></div></section>
+
 <section class="page" id="request"><h2 class="section-title">طلب خدمة أو تسعيرة</h2><div class="card"><form id="requestForm">
 <div class="form-group"><label>الاسم</label><input id="clientName" required placeholder="اكتب اسمك"></div>
 <div class="form-group"><label>رقم الهاتف</label><input id="clientPhone" required type="tel" placeholder="رقم التواصل"></div>
@@ -57,25 +64,45 @@ footer{text-align:center;color:var(--muted);padding:25px 10px;font-size:12px}
 <div class="form-group"><label>تفاصيل الطلب</label><textarea id="requestDetails" placeholder="اكتب تفاصيل الخدمة المطلوبة"></textarea></div>
 <button class="gold-btn" type="submit">إرسال الطلب عبر واتساب</button></form></div>
 <div class="card" style="margin-top:15px"><h3>📋 شروط الاتفاق</h3><p style="line-height:2;margin-top:10px">• يتم تحديد السعر بعد معرفة تفاصيل العمل.<br>• الاتفاق على المواد والمواصفات قبل التنفيذ.<br>• تحديد مدة العمل حسب حجم المشروع.<br>• يتم الاتفاق على الدفعات قبل بداية العمل.<br>• أي أعمال إضافية يتم الاتفاق عليها بصورة منفصلة.</p></div></section>
+
 <section class="page" id="gallery"><h2 class="section-title">معرض أعمالنا</h2><p style="color:#777;margin-bottom:15px">نماذج وأفكار من أعمال الديكور والتشطيب.</p><div class="gallery" id="galleryList"></div></section>
-<section class="page" id="account"><h2 class="section-title">حسابي</h2><div class="card"><h3>الفخامة للديكور والتشطيب</h3><p style="margin-top:10px;line-height:1.8">مرحباً بك في تطبيق الفخامة. يمكنك التواصل معنا وطلب الخدمات.</p><button class="gold-btn" onclick="openWhatsApp()">تواصل معنا</button><button class="outline-btn" onclick="goPage('settings')">⚙️ الإعدادات</button><button class="dark-btn" onclick="adminLogin()">🔐 دخول لوحة الإدارة</button></div></section>
-<section class="page" id="settings"><h2 class="section-title">الإعدادات</h2><div class="setting-item"><h3>📱 معلومات التواصل</h3><p style="margin-top:10px">رقم واتساب التطبيق</p><input id="settingsPhone" placeholder="رقم واتساب"><button class="gold-btn" onclick="savePhone()">حفظ رقم التواصل</button></div>
-<div class="setting-item"><h3>🎨 مظهر التطبيق</h3><label>لون التطبيق</label><select id="themeSelect" onchange="changeTheme(this.value)"><option value="#c9a45c">ذهبي</option><option value="#3498db">أزرق</option><option value="#27ae60">أخضر</option><option value="#9b59b6">بنفسجي</option><option value="#e67e22">برتقالي</option></select></div>
-<div class="setting-item"><h3>📑 شروط الاتفاق</h3><p style="line-height:2;margin-top:10px">يتم الاتفاق على تفاصيل العمل والسعر والمواد والمدة قبل التنفيذ.</p></div><button class="dark-btn" onclick="goPage('account')">رجوع</button></section>
+
+<section class="page" id="account"><h2 class="section-title">حسابي</h2><div class="card"><h3>الفخامة للديكور والتشطيب</h3><p style="margin-top:10px;line-height:1.8">مرحباً بك في تطبيق الفخامة. يمكنك التواصل معنا وطلب الخدمات.</p><button class="gold-btn" onclick="openWhatsApp()">تواصل معنا</button><button class="outline-btn" onclick="goPage('settings')">⚙️ فتح الإعدادات</button><button class="dark-btn" onclick="adminLogin()">🔐 دخول لوحة الإدارة</button></div></section>
+
+<section class="page" id="settings">
+<h2 class="section-title">⚙️ إعدادات الفخامة</h2>
+<p style="color:#777;line-height:1.8">من هنا يمكنك الوصول إلى إعدادات التطبيق وإدارة المعلومات.</p>
+<div class="setting-menu">
+<button class="setting-link" onclick="showSetting('contactSettings')"><span>📱</span>معلومات التواصل</button>
+<button class="setting-link" onclick="showSetting('appearanceSettings')"><span>🎨</span>مظهر التطبيق</button>
+<button class="setting-link" onclick="showSetting('termsSettings')"><span>📑</span>شروط الاتفاق</button>
+<button class="setting-link" onclick="openAdminFromSettings()"><span>🛠️</span>إدارة الخدمات والطلبات</button>
+<button class="setting-link" onclick="goPage('gallery')"><span>🖼️</span>معرض الأعمال</button>
+<button class="setting-link" onclick="adminLogin()"><span>🔐</span>لوحة الإدارة</button>
+</div>
+<div id="contactSettings" class="setting-item" style="display:none;margin-top:15px"><h3>📱 معلومات التواصل</h3><p style="margin-top:10px">رقم واتساب التطبيق</p><input id="settingsPhone" placeholder="رقم واتساب"><button class="gold-btn" onclick="savePhone()">حفظ رقم التواصل</button></div>
+<div id="appearanceSettings" class="setting-item" style="display:none;margin-top:15px"><h3>🎨 مظهر التطبيق</h3><label>لون التطبيق</label><select id="themeSelect" onchange="changeTheme(this.value)"><option value="#c9a45c">ذهبي</option><option value="#3498db">أزرق</option><option value="#27ae60">أخضر</option><option value="#9b59b6">بنفسجي</option><option value="#e67e22">برتقالي</option></select></div>
+<div id="termsSettings" class="setting-item" style="display:none;margin-top:15px"><h3>📑 شروط الاتفاق</h3><p style="line-height:2;margin-top:10px">• يتم تحديد السعر بعد معرفة تفاصيل العمل.<br>• الاتفاق على المواد والمواصفات قبل التنفيذ.<br>• تحديد مدة العمل حسب حجم المشروع.<br>• يتم الاتفاق على الدفعات قبل بداية العمل.<br>• أي أعمال إضافية يتم الاتفاق عليها بصورة منفصلة.</p></div>
+</section>
+
 <section class="page" id="admin"><h2 class="section-title">لوحة التحكم</h2><div class="stat-grid">
 <div class="stat"><strong id="totalOrders">0</strong>الطلبات</div><div class="stat"><strong id="pendingOrders">0</strong>قيد التنفيذ</div><div class="stat"><strong id="totalServices">0</strong>الخدمات</div><div class="stat"><strong id="completedOrders">0</strong>مكتملة</div></div>
 <div><h2 class="section-title">طلبات العملاء</h2><div id="adminOrders"></div></div>
 <div><h2 class="section-title">إدارة الخدمات</h2><div class="card"><label>اسم الخدمة الجديدة</label><input id="newServiceName" placeholder="مثلاً: ديكور خشبي"><label>الأيقونة</label><input id="newServiceIcon" placeholder="مثلاً: 🪵"><label>وصف الخدمة</label><textarea id="newServiceDescription"></textarea><button class="gold-btn" onclick="addService()">إضافة الخدمة</button></div><div id="adminServices" style="margin-top:15px"></div></div>
 <div><h2 class="section-title">إعدادات الإدارة</h2><div class="card"><label>رقم واتساب</label><input id="adminPhone" placeholder="رقم الواتساب"><button class="gold-btn" onclick="saveAdminPhone()">حفظ الرقم</button><hr style="margin:20px 0;border:0;border-top:1px solid #eee"><label>تغيير كلمة المرور</label><input id="newAdminPassword" type="password" placeholder="كلمة المرور الجديدة"><button class="dark-btn" onclick="changePassword()">تغيير كلمة المرور</button><button class="outline-btn" onclick="exportOrders()">📥 تنزيل نسخة من الطلبات</button><button class="outline-btn" onclick="logoutAdmin()">تسجيل الخروج</button></div></div></section>
+
 <footer>الفخامة للديكور والتشطيب<br>جميع الحقوق محفوظة</footer>
 <nav class="bottom-nav">
 <button class="nav-item active" onclick="goPage('home',this)"><span class="nav-icon">🏠</span>الرئيسية</button>
 <button class="nav-item" onclick="goPage('services',this)"><span class="nav-icon">🛠️</span>الخدمات</button>
 <button class="nav-item" onclick="goPage('request',this)"><span class="nav-icon">📋</span>طلب خدمة</button>
 <button class="nav-item" onclick="goPage('gallery',this)"><span class="nav-icon">🖼️</span>أعمالنا</button>
-<button class="nav-item" onclick="goPage('account',this)"><span class="nav-icon">👤</span>حسابي</button></nav>
+<button class="nav-item" onclick="goPage('account',this)"><span class="nav-icon">👤</span>حسابي</button>
+<button class="nav-item" onclick="goPage('settings',this)"><span class="nav-icon">⚙️</span>الضبط</button>
+</nav>
 <button class="whatsapp-float" onclick="openWhatsApp()">☎</button>
 <div class="modal image-modal" id="imageModal" onclick="closeImage()"><img id="modalImage"></div>
+
 <script>
 const defaultServices=[
 {name:"جبس بورد",icon:"🏗️",description:"تصميم وتنفيذ الأسقف والحوائط والديكورات الجبسية."},
@@ -99,7 +126,9 @@ let phone=localStorage.getItem("fakhamaPhone")||"249919040187";
 let adminPassword=localStorage.getItem("fakhamaPassword")||"1234";
 let adminLogged=false;
 function saveData(){localStorage.setItem("fakhamaServices",JSON.stringify(services));localStorage.setItem("fakhamaOrders",JSON.stringify(orders));localStorage.setItem("fakhamaPhone",phone)}
-function goPage(page,button){if(page==="admin"&&!adminLogged){adminLogin();return}document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));const selected=document.getElementById(page);if(selected)selected.classList.add("active");document.querySelectorAll(".nav-item").forEach(n=>n.classList.remove("active"));if(button)button.classList.add("active");if(page==="admin")renderAdmin();if(page==="settings")document.getElementById("settingsPhone").value=phone;window.scrollTo(0,0)}
+function goPage(page,button){if(page==="admin"&&!adminLogged){adminLogin();return}document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));const selected=document.getElementById(page);if(selected)selected.classList.add("active");document.querySelectorAll(".nav-item").forEach(n=>n.classList.remove("active"));if(button)button.classList.add("active");if(page==="admin")renderAdmin();if(page==="settings"){document.getElementById("settingsPhone").value=phone;document.querySelectorAll("#settings .setting-item").forEach(x=>x.style.display="none")}window.scrollTo(0,0)}
+function showSetting(id){document.querySelectorAll("#settings .setting-item").forEach(x=>x.style.display="none");const box=document.getElementById(id);if(box)box.style.display="block";if(id==="contactSettings")document.getElementById("settingsPhone").value=phone}
+function openAdminFromSettings(){adminLogin()}
 function renderServices(){const home=document.getElementById("homeServices"),list=document.getElementById("servicesList"),select=document.getElementById("serviceType");home.innerHTML="";list.innerHTML="";select.innerHTML='<option value="">اختر الخدمة</option>';services.forEach(s=>{const safeName=s.name.replace(/'/g,"&#39;");const html=`<div class="card service-card"><div class="icon">${s.icon}</div><h3>${s.name}</h3><p>${s.description}</p><button class="gold-btn" onclick="chooseService('${safeName}')">اطلب الخدمة</button></div>`;home.innerHTML+=html;list.innerHTML+=html;select.innerHTML+=`<option value="${s.name}">${s.name}</option>`})}
 function chooseService(name){goPage("request");document.getElementById("serviceType").value=name}
 function renderGallery(){document.getElementById("galleryList").innerHTML=defaultGallery.map(img=>`<img src="${img}" onclick="showImage('${img}')">`).join("")}
