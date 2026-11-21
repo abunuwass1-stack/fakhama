@@ -124,6 +124,10 @@ const defaultGallery=[
 let services=JSON.parse(localStorage.getItem("fakhamaServices"))||defaultServices;
 let orders=JSON.parse(localStorage.getItem("fakhamaOrders"))||[];
 let phone=localStorage.getItem("fakhamaPhone")||"249919040187";
+// استعادة كلمة مرور الإدارة عند فتح الرابط مع ?resetadmin=1
+if(new URLSearchParams(location.search).get("resetadmin")==="1"){
+  localStorage.removeItem("fakhamaPassword");
+}
 let adminPassword=localStorage.getItem("fakhamaPassword")||"1234";
 let adminLogged=false,cloudGallery=[],cloudGalleryReady=false;
 function saveData(){localStorage.setItem("fakhamaServices",JSON.stringify(services));localStorage.setItem("fakhamaOrders",JSON.stringify(orders));localStorage.setItem("fakhamaPhone",phone)}
